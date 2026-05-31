@@ -6,202 +6,19 @@
     <title>Juan Nieves | Lingkod ng Panginoong Hesukristo</title>
     <meta name="description" content="Opisyal na Personal Ministry Website ni Juan Nieves">
 
+        }
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        :root{
-            --primary:#0f172a;
-            --secondary:#1e3a8a;
-            --accent:#facc15;
-            --white:#ffffff;
-            --text:#334155;
-        }
-
-        *{ margin:0; padding:0; box-sizing:border-box; }
-
-        body{
-            font-family:'Inter',sans-serif;
-            background:linear-gradient(to bottom,#f8fafc,#eef2ff);
-            color:var(--text);
-            line-height:1.7;
-        }
-
-        h1,h2,h3{
-            font-family:'Playfair Display',serif;
-        }
-
-        .container{
-            max-width:1100px;
-            margin:auto;
-            padding:0 20px;
-        }
-
-        nav{
-            position:sticky;
-            top:0;
-            z-index:1000;
-            background:rgba(255,255,255,.95);
-            backdrop-filter:blur(15px);
-            box-shadow:0 5px 25px rgba(0,0,0,.08);
-        }
-
-        .nav-container{
-            max-width:1100px;
-            margin:auto;
-            padding:15px 20px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-
-        .logo{
-            font-size:1.5rem;
-            font-weight:700;
-            color:var(--secondary);
-        }
-
-        .nav-links a{
-            text-decoration:none;
-            color:#2809db;
-            margin-left:20px;
-            font-weight:500;
-        }
-
-        .hero{
-            min-height:90vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            color:white;
-            background:linear-gradient(rgba(15,23,42,.75), rgba(30,58,138,.85)), 
-                       url("20211127_175852.png");
-            background-size:cover;
-            background-position:center;
-        }
-
-        .hero h1{
-            font-size:3.2rem;
-            margin-bottom:15px;
-        }
-
-        .hero p{
-            max-width:650px;
-            font-size:1.25rem;
-            margin-bottom:35px;
-        }
-
-        .btn{
-            display:inline-block;
-            padding:15px 35px;
-            border-radius:50px;
-            text-decoration:none;
-            font-weight:700;
-            transition:.3s;
-        }
-
-        .btn-primary{
-            background:var(--accent);
-            color:#111827;
-        }
-
-        .section{
-            background:white;
-            border-radius:24px;
-            padding:50px 35px;
-            margin:35px 0;
-            box-shadow:0 10px 30px rgba(0,0,0,.06);
-        }
-
-        .section-title{
-            color:var(--secondary);
-            margin-bottom:25px;
-            font-size:2rem;
-        }
-
-        .profile-image{
-            width:320px;
-            max-width:100%;
-            display:block;
-            margin:25px auto;
-            border-radius:20px;
-            box-shadow:0 15px 30px rgba(0,0,0,.15);
-        }
-
-        .gallery{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-            gap:18px;
-        }
-
-        .gallery img{
-            width:100%;
-            border-radius:16px;
-            box-shadow:0 8px 20px rgba(0,0,0,.1);
-        }
-
-        .video-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:20px;
-        }
-
-        .video-wrapper{
-            position:relative;
-            padding-bottom:56.25%;
-            height:0;
-            overflow:hidden;
-            border-radius:16px;
-            box-shadow:0 8px 20px rgba(0,0,0,.1);
-        }
-
-        .video-wrapper iframe{
-            position:absolute;
-            top:0; left:0;
-            width:100%; height:100%;
-        }
-
-        input, textarea{
-            width:100%;
-            padding:16px 18px;
-            border:2px solid #e2e8f0;
-            border-radius:12px;
-            margin-bottom:18px;
-            font-size:1.05rem;
-        }
-
-        input:focus, textarea:focus{
-            border-color:#3b82f6;
-        }
-
-        .submit-btn{
-            width:100%;
-            padding:16px;
-            background:#2563eb;
-            color:white;
-            border:none;
-            border-radius:12px;
-            font-size:1.1rem;
-            font-weight:600;
-            cursor:pointer;
-        }
-
-        footer{
-            background:#0f172a;
-            color:white;
-            text-align:center;
-            padding:50px 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
 <nav>
 <div class="nav-container">
-    <div class="logo"><i class="fas fa-cross"></i> Juan Nieves</div>
-    <div class="nav-links">
+    <div class="logo"><a href="#home"><i class="fas fa-cross"></i> Juan Nieves</a></div>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="nav-links">
         <a href="#about">Tungkol</a>
         <a href="#prayer">Panalangin</a>
         <a href="#gallery">Gallery</a>
@@ -262,10 +79,20 @@
     <section class="section" id="donate">
         <h2 class="section-title"><i class="fas fa-hand-holding-heart"></i> Suportahan ang Ministeryo</h2>
         <p style="text-align:center;">Kung naging pagpapala sa inyo ang ministeryong ito, maaari ninyong suportahan.</p>
-        <div style="text-align:center; margin-top:20px;">
-            <a href="tel:09952172435" class="btn" style="background:#e11d48; color:white; padding:16px 40px;">
-                <i class="fas fa-gift"></i> Magbigay ng Abuloy
-            </a>
+        <div class="donate-grid">
+            <div class="gcash-qr">
+                <img src="GCash-MyQR-31052026104437.PNG.jpg" alt="GCash QR code para sa pag-donate">
+                <p class="muted" style="text-align:center;font-size:0.95rem;margin-top:8px">I-scan ang QR code gamit ang GCash app para magbayad.</p>
+            </div>
+            <div class="donate-actions">
+                <p class="contact-info">GCash Number: <strong id="gcash-number">0995 217 2435</strong></p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                    <button class="btn" id="copy-gcash"><i class="fas fa-copy"></i> Kopyahin Numero</button>
+                    <a class="btn btn-donate" href="tel:09952172435"><i class="fas fa-phone"></i> Tawag/GCash</a>
+                    <a class="btn" href="#contact"><i class="fas fa-envelope"></i> Magpadala ng Mensahe</a>
+                </div>
+                <p class="muted" style="margin-top:12px">Tip: Para sa mas secure at trackable na bayad, mag-apply para sa GCash Business / Merchant account at gamitin ang opisyal na API o payment gateway integration.</p>
+            </div>
         </div>
     </section>
 
@@ -273,7 +100,7 @@
     <section class="section" id="contact">
         <h2 class="section-title"><i class="fas fa-envelope"></i> Makipag-Ugnayan</h2>
         
-        <div class="contact-info" style="margin-bottom:30px; font-size:1.1rem;">
+        <div class="contact-info">
             📱 <strong>0995 217 2435</strong><br>
             ✉️ <a href="mailto:jn1097733@gmail.com">jn1097733@gmail.com</a><br>
             👍 <a href="https://www.facebook.com/juannieves.jn109" target="_blank">facebook.com/juannieves.jn109</a>
@@ -283,7 +110,7 @@
             <input type="text" name="name" placeholder="Iyong Pangalan" required>
             <input type="email" name="email" placeholder="Iyong Email" required>
             <textarea name="message" rows="6" placeholder="Iyong Mensahe o Prayer Request..." required></textarea>
-            <button type="submit" class="btn btn-primary" style="width:100%;">Ipadala ang Mensahe</button>
+            <button type="submit" class="btn btn-primary btn-block">Ipadala ang Mensahe</button>
         </form>
     </section>
 
