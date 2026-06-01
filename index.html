@@ -85,14 +85,29 @@
             <div class="prayer-card">
                 <h3>Panalangin para sa Proteksyon</h3>
                 <p>Panginoon, takpan Mo kami ng Iyong banal na presensya at palayain sa sinumang kasamaan. Ipinagkakaloob namin ang Iyong proteksyon mula sa malisyosong tingin at malupit na hangarin.</p>
+                <div class="prayer-actions">
+                    <button class="btn btn-secondary copy-prayer"><i class="fas fa-copy"></i> Kopyahin</button>
+                    <button class="btn btn-secondary play-prayer"><i class="fas fa-play"></i> Play</button>
+                    <button class="btn btn-secondary share-prayer"><i class="fas fa-share-alt"></i> Share</button>
+                </div>
             </div>
             <div class="prayer-card">
                 <h3>Panalangin para sa Paglilinis</h3>
                 <p>Lord Jesus, linisin Mo ang aming tahanan, katawan, at puso mula sa anumang masasamang espiritu. Palitan Mo ang ating mga takot ng kapayapaan at pag-ibig.</p>
+                <div class="prayer-actions">
+                    <button class="btn btn-secondary copy-prayer"><i class="fas fa-copy"></i> Kopyahin</button>
+                    <button class="btn btn-secondary play-prayer"><i class="fas fa-play"></i> Play</button>
+                    <button class="btn btn-secondary share-prayer"><i class="fas fa-share-alt"></i> Share</button>
+                </div>
             </div>
             <div class="prayer-card">
                 <h3>Panalangin para sa Malinaw na Paningin</h3>
                 <p>O Diyos, bigyan Mo kami ng karunungan upang makita ang tunay na motibo at iwasan ang anumang nakakapinsalang epekto ng mabigat na tanaw. Ilayo Mo kami sa malas at kamandag ng masamang tingin.</p>
+                <div class="prayer-actions">
+                    <button class="btn btn-secondary copy-prayer"><i class="fas fa-copy"></i> Kopyahin</button>
+                    <button class="btn btn-secondary play-prayer"><i class="fas fa-play"></i> Play</button>
+                    <button class="btn btn-secondary share-prayer"><i class="fas fa-share-alt"></i> Share</button>
+                </div>
             </div>
         </div>
         <p class="section-copy">Kung nais mo ng dagdag na panalangin, mag-message lang sa amin at ibahagi ang iyong kahilingan. Nandito kami para sabay tayong manalangin at lumaban sa dilim.</p>
@@ -141,20 +156,54 @@
     <!-- Donation -->
     <section class="section" id="donate">
         <h2 class="section-title"><i class="fas fa-hand-holding-heart"></i> Suportahan ang Ministeryo</h2>
-        <p class="section-copy">Kung naging pagpapala sa inyo ang ministeryong ito, maaari ninyong suportahan sa pamamagitan ng pag-scan ng QR, tawag sa numero, o pagpadala ng mensahe.</p>
-        <div class="donate-grid">
-            <div class="gcash-qr">
-                <img src="GCash-MyQR-31052026104437.PNG.jpg" alt="GCash QR code para sa pag-donate">
-                <p class="muted" style="text-align:center;font-size:0.95rem;margin-top:8px">I-scan ang QR code gamit ang GCash app para magbayad.</p>
-            </div>
-            <div class="donate-actions">
-                <p class="contact-info">GCash Number: <strong id="gcash-number">0995 217 2435</strong></p>
-                <div style="display:flex;gap:10px;flex-wrap:wrap">
-                    <button class="btn" id="copy-gcash"><i class="fas fa-copy"></i> Kopyahin Numero</button>
-                    <a class="btn btn-donate" href="tel:09952172435"><i class="fas fa-phone"></i> Tawag/GCash</a>
-                    <a class="btn" href="#contact"><i class="fas fa-envelope"></i> Magpadala ng Mensahe</a>
+        <p class="section-copy">Kung naging pagpapala sa inyo ang ministeryong ito, maaari ninyong suportahan sa pamamagitan ng GCash, Pi Network, o sa pamamagitan ng direktang contact.</p>
+        
+        <div class="donate-tabs">
+            <button class="tab-btn active" data-tab="gcash">GCash</button>
+            <button class="tab-btn" data-tab="pi">Pi Network</button>
+        </div>
+
+        <!-- GCash Tab -->
+        <div class="tab-content active" id="tab-gcash">
+            <div class="donate-grid">
+                <div class="gcash-qr">
+                    <img src="GCash-MyQR-31052026104437.PNG.jpg" alt="GCash QR code para sa pag-donate">
+                    <p class="muted" style="text-align:center;font-size:0.95rem;margin-top:8px">I-scan ang QR code gamit ang GCash app para magbayad.</p>
                 </div>
-                <p class="muted" style="margin-top:12px">Tip: Para sa mas secure at trackable na bayad, mag-apply para sa GCash Business / Merchant account at gamitin ang opisyal na API o payment gateway integration.</p>
+                <div class="donate-actions">
+                    <p class="contact-info">GCash Number: <strong id="gcash-number">0995 217 2435</strong></p>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap">
+                        <button class="btn" id="copy-gcash"><i class="fas fa-copy"></i> Kopyahin Numero</button>
+                        <a class="btn btn-donate" href="tel:09952172435"><i class="fas fa-phone"></i> Tawag/GCash</a>
+                        <a class="btn" href="#contact"><i class="fas fa-envelope"></i> Magpadala ng Mensahe</a>
+                    </div>
+                    <p class="muted" style="margin-top:12px">Tip: Para sa mas secure at trackable na bayad, mag-apply para sa GCash Business / Merchant account at gamitin ang opisyal na API o payment gateway integration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pi Network Tab -->
+        <div class="tab-content" id="tab-pi">
+            <div class="donate-grid">
+                <div class="gcash-qr">
+                    <img src="20260601_223333.png" alt="Pi Network QR code para sa pag-donate">
+                    <p class="muted" style="text-align:center;font-size:0.95rem;margin-top:8px">I-scan o i-tap ang QR para magpadala ng Pi</p>
+                </div>
+                <div class="donate-actions">
+                    <p class="contact-info">Pi Wallet Address:<br><strong id="pi-wallet" style="word-break:break-all;font-size:0.9rem">GDMXIXXMMRBVAKAIAXGGMBZLEL652MRF3L25Z4PNLD4WFXZPRVDQEMU6</strong></p>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0">
+                        <button class="btn" id="copy-pi"><i class="fas fa-copy"></i> Kopyahin Address</button>
+                        <a class="btn btn-secondary" href="https://minepi.com/jn109pi" target="_blank"><i class="fas fa-link"></i> Bisitahin Pi</a>
+                    </div>
+                    <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:12px;padding:16px;margin-top:14px">
+                        <p style="margin:0;font-weight:700;color:#92400e">✨ Mag-Earn ng Free Pi!</p>
+                        <p style="margin:8px 0 0;color:#b45309;font-size:0.95rem">Gustong kumita ng libre? Mag-sign up sa Pi Network gamit ang aming referral code at magsimula ng pag-mine. Libre at walang bayad!</p>
+                        <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;align-items:center">
+                            <a class="btn btn-primary" href="https://minepi.com/jn109pi" target="_blank" style="flex:1;min-width:160px"><i class="fas fa-play-circle"></i> Magsimula Ngayon</a>
+                            <button class="btn btn-secondary" id="copy-pi-code" style="white-space:nowrap"><i class="fas fa-user-plus"></i> Code: jn109pi</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
